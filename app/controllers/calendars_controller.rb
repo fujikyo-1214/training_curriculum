@@ -1,10 +1,13 @@
 class CalendarsController < ApplicationController
 
+  
 
   def index
     get_week
     @plan = Plan.new
   end
+
+
 
 
   def create
@@ -23,6 +26,11 @@ class CalendarsController < ApplicationController
     
     @todays_date = Date.today
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> d683d3952e835429b5bb2656d31635dcaff6a8e5
     @week_days = []
 
     plans = Plan.where(date: @todays_date..@todays_date + 6)
@@ -38,7 +46,12 @@ class CalendarsController < ApplicationController
         wday_num = wday_num -7
       end
 
+<<<<<<< HEAD
       days = { month: (@todays_date + x).month, date: (@todays_date+x).day, plans: today_plans, wdays: wdays[(@todays_date + x).wday]}
+=======
+      days = { month: (@todays_date + x).month, date: (@todays_date+x).day, plans: today_plans, wdays: @today_wday}
+
+>>>>>>> d683d3952e835429b5bb2656d31635dcaff6a8e5
       @week_days.push(days)
     end
   end
